@@ -38,8 +38,7 @@ public class WebValidatorConfig {
                 .configure()
                 .addProperty(FAIL_FAST_KEY, RPanConstants.TRUE_STR)
                 .buildValidatorFactory();
-        Validator validator = validatorFactory.getValidator();
-        return validator;
+        return validatorFactory.getValidator();
     }
 
 
