@@ -15,6 +15,7 @@
     <description>R Pan项目服务端</description>
     <modules>
         <module>framework</module>
+        <module>server</module>
     </modules>
     <packaging>pom</packaging>
 
