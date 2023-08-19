@@ -2,6 +2,7 @@ package com.imooc.pan.server;
 
 import com.imooc.pan.core.constants.RPanConstants;
 import com.imooc.pan.core.response.R;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.ansi.AnsiColor;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAsync
 @Slf4j
 @RestController
+@Api("测试")
 public class RPanServerLauncher {
 
     public static void main(String[] args) {
