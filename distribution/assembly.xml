@@ -2,6 +2,11 @@
     <id>${project.version}</id>
     <includeBaseDirectory>true</includeBaseDirectory>
     <formats>
+<!--        这个dir就是r-pan-server-1.0目录，就是在打完包后，在r-pan-server-1.0目录下，
+把server的r-pan-server.jar复制到r-pan-server-1.0目录下的target目录，
+而distribution的target目录下的r-pan-server.jar其实是distribution这个项目的名字
+因为pom中<finalName>r-pan-server</finalName>其实是distribution的名字，这里就知道了，是讲师的问题。
+-->
         <format>dir</format>
         <format>tar.gz</format>
         <format>zip</format>
@@ -18,14 +23,28 @@
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
+<!--        <fileSet>-->
+<!--            <includes>-->
+<!--                <include>logs/*</include>-->
+<!--            </includes>-->
+<!--            <fileMode>0755</fileMode>-->
+<!--        </fileSet>-->
+<!--        <fileSet>-->
+<!--            <directory>target/</directory>-->
+<!--            <outputDirectory>./</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>${finalName}.jar</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
     </fileSets>
     <files>
         <file>
             <!--打好的jar包名称和放置目录-->
 
-<!--            <source>../server/target/r-pan-server.jar</source>-->
-            <source>D:\devCode\r-pan\server\target\r-pan-server.jar</source>
+            <source>../server/target/r-pan-server.jar</source>
+<!--            <source>D:/devCode/r-pan/server/target/r-pan-server.jar</source>-->
             <outputDirectory>target/</outputDirectory>
+<!--            <outputDirectory>../../target/</outputDirectory>-->
         </file>
     </files>
     <moduleSets>
