@@ -31,10 +31,6 @@ public class RPanServerLauncher {
         printStartLog(applicationContext);
     }
 
-    @GetMapping("hello")
-    public R<String> hello(@NotBlank(message = "name不能为空") String name){
-        return R.success("hello" +name +"1");
-    }
 
 
     /**
