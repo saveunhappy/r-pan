@@ -4,6 +4,7 @@ import com.imooc.pan.core.constants.RPanConstants;
 import com.imooc.pan.core.response.R;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.ansi.AnsiColor;
 import org.springframework.boot.ansi.AnsiOutput;
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +21,10 @@ import javax.validation.constraints.NotBlank;
 
 @SpringBootApplication(scanBasePackages = RPanConstants.BASE_COMPONENT_SCAN_PATH)
 @ServletComponentScan(basePackages = RPanConstants.BASE_COMPONENT_SCAN_PATH)
+@EnableTransactionManagement
+@MapperScan(basePackages = RPanConstants.BASE_COMPONENT_SCAN_PATH + ".server.modules.**.mapper")
 @EnableAsync
 @Slf4j
-@RestController
-@Api("测试")
-@Validated
 public class RPanServerLauncher {
 
     public static void main(String[] args) {
